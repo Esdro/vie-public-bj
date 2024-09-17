@@ -12,39 +12,33 @@ import {FileIcon, HomeIcon, IdCardIcon, LucideNewspaper} from "lucide-react";
 function Nav() {
 
     return (
-        <NavigationMenu>
-            <NavigationMenuList className="gap-3">
-                <NavigationMenuItem>
-                    <Link href="/" className="flex gap-2 justify-between items-center flex-row">
-                        <HomeIcon size={20}/>
-                        <NavigationMenuLink>
-                            Accueil
-                        </NavigationMenuLink>
-                    </Link>
+        <NavigationMenu className="w-full ">
+            <NavigationMenuList className=" w-full  gap-5 flex flex-row items-baseline justify-center">
+                <NavigationMenuItem className="flex gap-2 justify-between items-center flex-row">
+                    <HomeIcon size={20}/>
+                    <NavigationMenuLink href="/">
+                        Accueil
+                    </NavigationMenuLink>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/" className="flex gap-2 justify-between items-center flex-row">
-                        <LucideNewspaper size={20}/>
-                        <NavigationMenuLink>
-                            Actualités
-                        </NavigationMenuLink>
-                    </Link>
+                <NavigationMenuItem className="flex gap-2 justify-between items-center flex-row">
+                    <LucideNewspaper size={20}/>
+                    <NavigationMenuLink href="/actualites">
+                        Actualités
+                    </NavigationMenuLink>
+
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/" className="flex gap-2 justify-between items-center flex-row">
-                        <IdCardIcon size={20}/>
-                        <NavigationMenuLink>
-                            Annuaires
-                        </NavigationMenuLink>
-                    </Link>
+                <NavigationMenuItem className="flex gap-2 justify-between items-center flex-row">
+                    <IdCardIcon size={20}/>
+                    <NavigationMenuLink href="/annuaires">
+                        Annuaires
+                    </NavigationMenuLink>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
-                    <Link href="/" className="flex gap-2 justify-between items-center flex-row">
-                        <FileIcon size={20}/>
-                        <NavigationMenuLink>
-                            Documents
-                        </NavigationMenuLink>
-                    </Link>
+                <NavigationMenuItem className="flex gap-2 justify-between items-center flex-row">
+                    <FileIcon size={20}/>
+                    <NavigationMenuLink href="/documents">
+                        Documents
+                    </NavigationMenuLink>
+
                 </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
