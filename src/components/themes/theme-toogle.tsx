@@ -2,15 +2,15 @@
 import * as React from "react";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
-
+import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
+import { ToastAction } from "@/components/ui/toast";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { toast } from "sonner";
 
 export const THEME_MODE = {
   light: "light",
@@ -20,6 +20,7 @@ export const THEME_MODE = {
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
+  const { toast } = useToast();
 
   function toggleTheme(theme: string) {
     switch (theme) {
@@ -32,7 +33,13 @@ export function ModeToggle() {
       default:
         setTheme("dark");
     }
-    return toast.success("Thème changé avec succès !");
+    return toast({
+      title: "Thème mdifié",
+      description: ` Vous avez changé le thème du site en mode ${
+        theme === "light" ? "clair" : "sombre"
+      }.  `,
+      action: <ToastAction altText="Try again">Compris.</ToastAction>,
+    });
   }
 
   return (
