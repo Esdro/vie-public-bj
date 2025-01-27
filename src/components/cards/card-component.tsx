@@ -30,7 +30,7 @@ function CardComponent({ card }: CardProps) {
  /* console.log(theme);*/
 
   return (
-    <Card className="basis-1/4 m-2 shadow-md  hover:cursor-pointer hover:bg-foreground hover:text-background  ">
+    <Card className="basis-2/4 m-2 md:!basis-4/12 transition-smooth  shadow-md  hover:cursor-pointer hover:bg-foreground hover:text-background  ">
       <CardHeader>
         <CardTitle className="text-2xl">{card.title}</CardTitle>
       </CardHeader>

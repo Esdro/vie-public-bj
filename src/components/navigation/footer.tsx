@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
-        <div className="fixed bg-background  mt-24 bottom-0 border-t-2 text-center pt-1.5 right-0 left-0 ">
+        <div className="bg-background  mt-4 border-t-2 text-center pt-1.5 ">
             <div className="flex justify-center flex-col items-center ">
                 <p className="text-gray-500 text-center justify-center w-3/4 flex-row flex gap-1 items-center ">
                     Vie Publique Bénin est un projet d'initiative citoyenne. <br/>

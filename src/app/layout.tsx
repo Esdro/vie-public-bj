@@ -5,10 +5,11 @@ import { ThemeProvider } from "@/components/themes/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/navigation/header";
 import Footer from "@/components/navigation/footer";
+import { Metadata } from "next";
 
 const DM_SANS = DM_Sans({ subsets: ["latin"], weight: "400" });
 
-export const metadata = {
+export const metadata : Metadata = {
   title: "Vie Publique Bénin",
   description:
     "Vie Publique Bénin, la transparence dans l'action gouvernementale et la vie publique en République" +
@@ -20,20 +21,21 @@ export default function RootLayout({
   children: ReactNode;
 }>) {
   return (
-    <html lang="fr" suppressHydrationWarning>
-      <body className={DM_SANS.className}>
+    <html lang="fr" suppressHydrationWarning className="h-full">
+      <body className={`${DM_SANS.className} flex flex-col h-full`} >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <main className={"container mx-auto p-5 relative "}>
-            <Header />
-            <div className="mt-[95px] pb-16">{children}</div>
-            <Footer />
-            <Toaster />
+          
+          <Header />
+          <main className={"flex-grow container mx-auto h-auto p-5 "}>
+           {children}
           </main>
+          <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

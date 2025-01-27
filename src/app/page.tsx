@@ -1,7 +1,5 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
 import { SUJETS } from "@/lib/sujets-themes";
-import Link from "next/link";
 import CardList from "@/components/cards/card-lists";
 
 export default function Home() {

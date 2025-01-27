@@ -8,13 +8,7 @@ type CardListProps = {
 function CardList({ data }: CardListProps) {
   return (
     <div
-      className={
-        "flex lg:flex-row flex-col basis-1/2 md:basis-2/5 !my-4 mb-3 pb-16 md:pb-4" +
-        " gap-3" +
-        " flex-wrap" +
-        " justify-center" +
-        " items-baseline"
-      }
+      className={`grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 gap-2 `}
     >
       {data.map((card, index) => (
         <CardComponent key={index} card={card} />
